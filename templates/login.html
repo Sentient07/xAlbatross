@@ -1,0 +1,20 @@
+{% block content %}
+<form class="form-login" action="{% url 'login' %}" method="POST">{% csrf_token %}
+    <h2>Login to your account</h2>
+    <br>
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label>E-mail</label><br>
+        {{ form.email }}
+    </div>
+    <br>
+    <div class="fieldWrapper">
+        {{form.errors.values.0}}
+        <label>Password</label><br>
+        {{ form.password }}
+    </div>
+    <br>
+    <input type="submit" name="submit" class="btn btn-primary" value="Login">
+</form>
+
+{% endblock %}
